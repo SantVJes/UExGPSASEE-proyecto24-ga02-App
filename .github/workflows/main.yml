@@ -1,55 +1,35 @@
 name: netflix
 
-# Define cuándo debe ejecutarse el workflow
 on:
   push:
+   
 jobs:
-  reactivation:
-    name: Reactivate React Project
+  test:
+    name: Run tests
     runs-on: ubuntu-latest
 
     steps:
-      # Paso 1: Clonar el repositorio
+
       - name: Check out repository
         uses: actions/checkout@v3
 
-      # Paso 2: Configurar Node.js (requerido para proyectos React)
+ 
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
 
-      # Paso 3: Instalar dependencias
       - name: Install dependencies
         run: npm install
 
-      # Paso 4: Ejecutar pruebas (si tienes pruebas configuradas)
-      - name: Run tests
-        run: npm test -- --coverage  # O solo `npm test` si no necesitas cobertura
-
-      # Paso 5: Construir la aplicación de React (para producción)
-      - name: Build the app
-        run: npm run build
-
-      # Paso 6: Desplegar la aplicación (personaliza según tu flujo)
-      - name: Deploy to production
-        run: |
-          echo "Deploying the React app..."
-          # Aquí puedes agregar comandos para desplegar la aplicación
-          # Ejemplo con Firebase:
-          # firebase deploy --only hosting
-          
-          # O si usas otros servicios como Netlify, Vercel, AWS, etc., agrega los comandos correspondientes
 
   notify:
     name: Notify Team
     runs-on: ubuntu-latest
-    needs: reactivation
-
+    needs: test
     steps:
-      # Paso 7: Notificación (opcional)
+
       - name: Send notification to team
         run: |
-          echo "Notifying team about reactivation status..."
-          # Ejemplo de notificación (puedes usar Slack, correos, etc.)
-          # curl -X POST -H 'Content-type: application/json' --data '{"text":"React project reactivated!"}' https://slack-webhook-url
+          echo "Notifying team about test status..."
+          # Aquí puedes agregar comandos para notificar al equipo, por ejemplo en Slack
