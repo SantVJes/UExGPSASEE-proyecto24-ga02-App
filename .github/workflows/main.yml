@@ -1,0 +1,35 @@
+name: netflix
+
+on:
+  push:
+   
+jobs:
+  test:
+    name: Run tests
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+ 
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install
+
+
+  notify:
+    name: Notify Team
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+
+      - name: Send notification to team
+        run: |
+          echo "Notifying team about test status..."
+          # Aquí puedes agregar comandos para notificar al equipo, por ejemplo en Slack
