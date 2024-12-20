@@ -100,16 +100,19 @@ function NavigationButtons() {
 
 function NavigationHome() {
   const navigate = useNavigate();
-
   return (
     <>
-      <img
-        src={`/assets/img/Netflix.png`}
-        alt="Netflix logo"
+      <button
         onClick={() => navigate("/")}
-      ></img>
+        style={{ background: 'none', border: 'none', padding: 0 }}
+        aria-label="Ir a inicio de Netflix"
+      >
+        <img
+          src={`/assets/img/Netflix.png`}
+          alt="Netflix logo"
+        />
+      </button>
     </>
   );
 }
-
 export default App;
