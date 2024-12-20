@@ -78,9 +78,6 @@
   /* Estilos del carousel de imágenes */
   .carouselImagenes {
     margin-left: 40px;
-    padding-bottom: 30px !important;
-    padding-left: 20px !important;
-    padding-right: 20px !important;
     margin-right: 40px;
     display: flex;
     justify-content: space-between;
