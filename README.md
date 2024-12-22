@@ -21,6 +21,6 @@ Características
 - **Cliente HTTP:** Axios
 - **Base de Datos:** PostgreSQL (para almacenamiento de datos de contenido)
 
-## 📃 Más Información sobre el Método de Desarrollo
+## 📃 Más Información sobre el Método de Desarrollo sobre La Refactorizacion
 
-[Infome de la Tercera Entrega](https://github.com/UExGPSASEE/proyecto24-ga02/wiki/🗃%EF%B8%8FInforme-de--Tercera-entrega)
+[Infome de la Cuarta Entrega sonar cloud](https://github.com/UExGPSASEE/proyecto24-ga02/wiki/📡-Entrega-Trabajo-4:-SonarCloud)
